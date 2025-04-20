@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <title>ToDo list project</title>
+</head>
+
+<body id='Main'>
+    <div id="Head" class="head">
+        <div id="Logo">
+            <h2 style="color: white;">ToDo List</h2>
+        </div>
+    </div>
+    <div id="Tail">
+        <div id="Left-part">
+            <div id='my-calendar'>
+                <h2 style="color: white;">My Calendar</h3>
+            </div>
+            <div id="Tasks" class="tasks">
+                <div id="Tasks-Header">
+                    <h4> ToDo List</h2>
+                </div>
+                <div id="ToDo-body">
+                    <div id="ToDo-Header">
+                        <input type="text" id="ToDo-text" class="ToDo-input" placeholder="Add Task" />
+                        <input type="date" id="ToDo-date" class="ToDo-input" />
+                        <input type="time" id="ToDo-time" class="ToDo-input" />
+                        <img src="images/plus.jpg" alt="+" id="Plus-click" onclick="createToDoItems();" />
+                    </div>
+                    <h5 id="Alert"></h5>
+                    <ul id="list-items" class="list-items"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="calendar"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+body{
+    background: #1f2c39;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#Head{
+    width: 25%;
+    padding-bottom: 50px;
+}
+#Logo{
+    padding: 10px;
+}
+
+
+#Tail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+}
+
+#Left-part{
+    flex:1;
+    max-width: 300px;
+    margin:auto;
+}
+#my-calendar{
+    padding-bottom: 10px;
+}
+#my-calendar h2{
+    margin: 0 0 12px;
+}
+#Tasks{
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 30px;
+}
+#Tasks-Header{
+    display: flex;
+    align-items:start;
+    padding: 10px;
+}
+
+#Tasks-Header h4 {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+#ToDo-body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    border-radius: 30px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+}
+#ToDo-Header{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 30px 30px 0 0;
+    margin-bottom: 10px;
+}
+
+#ToDo-Header {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    justify-content: flex-start; 
+    padding: 10px;
+    border-radius: 30px 30px 0 0;
+    margin-bottom: 10px;
+}
+
+.ToDo-input {
+    width: 100%; 
+    padding: 15px;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#Plus-click {
+    align-self: flex-end;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+  
+#ToDo-body img {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    padding: 10px;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+ul li {
+    list-style:none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+  
+ul li:last-child {
+    border-bottom: none;
+}
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+}
+
+li img{
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+li:hover{
+    background: #e0e0e0;
+    transition: background 0.3s;
+}
+
+#Completed {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+}
+
+#Completed img {
+    display: inline-block;
+    margin-left: 10px; 
+    cursor: default;
+}
+
+li {
+    opacity: 0;
+    animation: new-item-animation 0.3s linear forwards;
+  }
+  
+  @keyframes new-item-animation {
+    from {
+      opacity: 0;
+      transform: translateY(-400px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+li.deleted-item {
+    animation: removed-item-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94)
+      forwards;
+    transform-origin: 0% 100%;
+}
+  
+#calendar {
+    flex: 2;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    min-height: 400px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+
+.fc {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fc-view-harness {
+    flex-grow: 1;
+    min-height: 400px;
+}
+
+
+@media (max-width: 768px) {
+    #Tail {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #Left-part {
+        max-width: 100%;
+    }
+
+    #calendar {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    #Tasks {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    #calendar {
+        padding: 10px;
+        min-height: 300px;
+    }
+
+    #ToDo-text {
+        font-size: 14px;
+    }
+
+    #Plus-click {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.toggleMe {
+    animation: hideMe 5s forwards;
+}
+@keyframes hideMe {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+@keyframes removed-item-animation {
+    0% {
+      opacity: 1;
+      transform: rotateZ(0);
+}
+  
+    100% {
+      opacity: 0;
+      transform: translateY(600px) rotateZ(90deg);
+    }
+}
