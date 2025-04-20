@@ -79,4 +79,12 @@ This web application is built using:
 ## **Contributing**
 Feel free to fork this repository and submit pull requests for improvements or new features.
 
+## 📥 How to Clone and Use
+
+### 1️⃣ Clone the Repository
+Run the following command in your terminal:
+
+```bash
+git clone https://github.com/Amir-Shaban32/ToDo-List-web-application.git
+
 ---
