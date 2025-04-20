@@ -86,5 +86,3 @@ Run the following command in your terminal:
 
 ```bash
 git clone https://github.com/Amir-Shaban32/ToDo-List-web-application.git
-
----
